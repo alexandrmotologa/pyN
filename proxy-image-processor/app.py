@@ -19,6 +19,7 @@ def observe(directory):
         return
     else:
         sort_files()
+
     # start watching
     last_file_list = sort_files()
     while True:
