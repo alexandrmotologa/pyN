@@ -20,6 +20,7 @@ def observe(directory):
         print("ERROR - directory not found!!!")
         return
     else:
+        print("Check for changes in your directory...")
         sort_files()
 
     # start watching
