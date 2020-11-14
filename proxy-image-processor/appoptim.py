@@ -25,7 +25,6 @@ def observe(directory):
     # start watching
     last_file_list = sort_files()
     while True:
-
         file_list = sort_files()
         if collections.Counter(last_file_list) != collections.Counter(file_list):
             added = [f for f in file_list if not f in last_file_list]
@@ -38,4 +37,30 @@ def observe(directory):
         sleep(5)
 
 
-observe("./images")
+def menu():
+    option = -1
+    try:
+        while option != 0:
+            print("1. Input your directory for check")
+            # print(">>1. To navigate into the root directory, use - name of directory ,\n\r
+            # To navigate up one directory level, use - '..', example: ../hw-magic
+            # ,/n/rSeparate folders with '/' ")
+            # daca mapa se afla in acelasi directoriu scrii doar mapa
+            # daca mapa se afla cu un nivel mai sus scrii ../hw-magic
+            print(f"2. Check default directory")
+            print("0. Exit")
+            option = int(input())
+
+            if option == 1:
+                print("To navigate into the root directory, use only name of directory, example: my_dir")
+                print("To navigate up one directory level, use - '..', example: ../name_of_your_dir")
+                print("Separate folders with '/'")
+                directory = input()
+                observe(f"./{directory}")
+            if option == 2:
+                observe("./images")
+            if option == 0:
+                print("##### BYE BYE #####")
+    except:
+        menu()
+menu()
