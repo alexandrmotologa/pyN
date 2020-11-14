@@ -42,11 +42,6 @@ def menu():
     try:
         while option != 0:
             print("1. Input your directory for check")
-            # print(">>1. To navigate into the root directory, use - name of directory ,\n\r
-            # To navigate up one directory level, use - '..', example: ../hw-magic
-            # ,/n/rSeparate folders with '/' ")
-            # daca mapa se afla in acelasi directoriu scrii doar mapa
-            # daca mapa se afla cu un nivel mai sus scrii ../hw-magic
             print(f"2. Check default directory")
             print("0. Exit")
             option = int(input())
