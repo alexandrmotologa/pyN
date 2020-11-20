@@ -1,7 +1,7 @@
 from os import path, walk
 from time import sleep
 import collections
-from image_transformer import ImageTransformer
+# from image_transformer import ImageTransformer
 
 
 class Observer:
