@@ -13,7 +13,8 @@ class Observer:
     def observe(self):
 
         def sort_files():
-            """Sort the files separately from the folders and sort files with extension (.jpg, .jpeg) to list(file_sort)"""
+            """Sort the files separately from the folders and sort files with extension (.jpg, .jpeg) to list(
+            file_sort) """
             file_sort = []
             ext = [".jpg", ".jpeg"]
             for root, dirs, files in walk(self.directory):
