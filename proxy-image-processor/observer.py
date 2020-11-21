@@ -1,14 +1,14 @@
 from os import path, walk
 from time import sleep
 import collections
-# from image_transformer import ImageTransformer
+from transformer_proxy import TransformerProxy
 
 
 class Observer:
 
-    def __init__(self, directory, transformer=None):
+    def __init__(self, directory):
         self.directory = directory
-        self.transformer = transformer
+        self.transformer = TransformerProxy("./images/original", "./images/processed")
 
     def observe(self):
 
@@ -46,12 +46,9 @@ class Observer:
                         print(f"File {removed[f]} Removed from folder {self.directory}")
 
                 # Processor / Transformer ########
-                if self.transformer is not None:
-                    for file in file_list:
-                        print(file + " processed.")
-                        self.transformer.transform(file)
-                else:
-                    print("No transformer found, ignoring processing!")
 
+                for file in file_list:
+                    print(file + " processed.")
+                    self.transformer.transform(file)
             last_file_list = file_list
             sleep(5)
