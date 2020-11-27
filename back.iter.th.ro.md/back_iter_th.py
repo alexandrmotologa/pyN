@@ -27,4 +27,3 @@ bc3 = BackCounter("third")
 bc1.start()
 bc2.start()
 bc3.start()
-
