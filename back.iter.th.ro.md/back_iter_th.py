@@ -15,7 +15,7 @@ class BackCounter(threading.Thread):
         global i
         while i < count:
             i += 1
-            print(f" {self.name} >> {count+1 - i}")
+            print(f" {self.name:7s} >> {count+1 - i:5}")
             sleep(0.1)
 
 
