@@ -2,6 +2,7 @@ import threading
 from time import sleep
 
 i = 0
+lock = threading.Lock()
 
 
 class BackCounter(threading.Thread):
@@ -12,11 +13,15 @@ class BackCounter(threading.Thread):
         self.name = name
 
     def run(self):
+        global lock
         global i
-        while i < count:
+
+        while i < count-2:
+            lock.acquire()
             i += 1
             print(f" {self.name:7s} >> {count+1 - i:5}")
             sleep(0.1)
+            lock.release()
 
 
 count = 10
